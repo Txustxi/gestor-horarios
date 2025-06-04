@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Horarios</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Gestor de Horarios</h1>
+            <div class="header-actions">
+                <button id="clearAll" class="action-btn">
+                    <i class="fas fa-trash"></i> Limpiar Todo
+                </button>
+                <button id="exportBtn" class="action-btn">
+                    <i class="fas fa-file-export"></i> Exportar
+                </button>
+            </div>
+        </header>
+        
+        <!-- Filtros -->
+        <div class="filters">
+            <div class="filter-group">
+                <label for="dayFilter">Filtrar por día:</label>
+                <select id="dayFilter">
+                    <option value="">Todos los días</option>
+                    <option value="lunes">Lunes</option>
+                    <option value="martes">Martes</option>
+                    <option value="miercoles">Miércoles</option>
+                    <option value="jueves">Jueves</option>
+                    <option value="viernes">Viernes</option>
+                    <option value="sabado">Sábado</option>
+                    <option value="domingo">Domingo</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="taskFilter">Filtrar por tarea:</label>
+                <input type="text" id="taskFilter" placeholder="Buscar tarea...">
+            </div>
+        </div>
+
+        <!-- Formulario para agregar horarios -->
+        <div class="schedule-form">
+            <h2>Agregar Horario</h2>
+            <form id="scheduleForm">
+                <div class="form-group">
+                    <label for="day">Día:</label>
+                    <select id="day" required>
+                        <option value="">Selecciona un día</option>
+                        <option value="lunes">Lunes</option>
+                        <option value="martes">Martes</option>
+                        <option value="miercoles">Miércoles</option>
+                        <option value="jueves">Jueves</option>
+                        <option value="viernes">Viernes</option>
+                        <option value="sabado">Sábado</option>
+                        <option value="domingo">Domingo</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="start">Hora de Inicio:</label>
+                    <input type="time" id="start" required>
+                </div>
+                <div class="form-group">
+                    <label for="end">Hora de Fin:</label>
+                    <input type="time" id="end" required>
+                </div>
+                <div class="form-group">
+                    <label for="task">Tarea:</label>
+                    <input type="text" id="task" required>
+                </div>
+                <div class="form-group">
+                    <label for="priority">Prioridad:</label>
+                    <select id="priority">
+                        <option value="baja">Baja</option>
+                        <option value="media">Media</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="notes">Notas:</label>
+                    <textarea id="notes" placeholder="Añade notas adicionales..." rows="3"></textarea>
+                </div>
+                <button type="submit" class="primary-btn">
+                    <i class="fas fa-plus"></i> Agregar Horario
+                </button>
+            </form>
+        </div>
+
+        <!-- Lista de horarios -->
+        <div class="schedule-list">
+            <h2>Mis Horarios</h2>
+            <div id="scheduleContainer"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
