@@ -189,15 +189,11 @@ button {
 }
 
 /* Animaciones */
-.schedule-item {
+.fade-in {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.3s ease forwards;
 }
-
-.schedule-item:nth-child(1) { animation-delay: 0.1s; }
-.schedule-item:nth-child(2) { animation-delay: 0.2s; }
-.schedule-item:nth-child(3) { animation-delay: 0.3s; }
 
 @keyframes fadeInUp {
     to {
